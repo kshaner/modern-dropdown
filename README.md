@@ -1,6 +1,6 @@
-# Touch Dropdown
+# Modern Dropdown
 
-Touch Dropdown is a utility javascript with no dependencies that covers all the bases for modern dropdown menus.
+Modern Dropdown is a utility javascript with no dependencies that covers all the bases for modern dropdown menus.
 
 It handles:
 
