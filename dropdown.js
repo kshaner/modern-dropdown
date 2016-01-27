@@ -198,7 +198,8 @@ window.Dropdown = (function() {
 		if (window.PointerEvent) {
 			this.container.addEventListener('pointerenter', evts.pointerenter);
 			this.container.addEventListener('pointerleave', evts.pointerleave);
-			this.menu.addEventListener('click', evts.handleTouchClose);
+//			todo: IE11 hates this for regular sites (not SPAs)
+//			this.menu.addEventListener('click', evts.handleTouchClose);
 		} else {
 			if (util.hasTouch) {
 				this.mainLink.addEventListener('click', function(e) {
