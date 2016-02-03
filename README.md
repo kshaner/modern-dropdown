@@ -28,7 +28,8 @@ jQuery('#node').dropdown(options);
 {
     delay: 250, // delay in milliseconds for hover intent
     openClass: 'dropdown--open', // class that is added to node when dropdown is open
-    menu : '> ul' // selector for submenu, events will not be added if menu is not found,
+    menu : '> ul', // selector for submenu, events will not be added if menu is not found
+    spa  : false, // set to true for single page application mode - the links will not be followed in the menu but will close the menu on click
     beforeOpen: function() {}, // is called as the class is about to be added, return false to cancel the rest of the open event, 'this' refers to dropdown object
     afterOpen: function() {}, // is called after the open class has been added, useful in case measurements need to be made, 'this' refers to dropdown object
     beforeClose: function() {}, // is called before the open class is about to be removed, return false to cancel the rest of the close event, 'this' refers to dropdown object
