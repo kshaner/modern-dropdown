@@ -261,8 +261,8 @@ window.Dropdown = (function() {
 
 	if (typeof window.jQuery === 'function') {
 		window.jQuery.fn.dropdown = function(opts) {
-			jQuery(this).each(function() {
-				jQuery(this).data('dropdown', new Factory(this, opts));
+			window.jQuery(this).each(function() {
+				window.jQuery(this).data('dropdown', new Factory(this, opts));
 			});
 		};
 	}
