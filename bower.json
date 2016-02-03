@@ -1,0 +1,26 @@
+{
+  "name": "modern-dropdown",
+  "homepage": "https://github.com/kshaner/modern-dropdown",
+  "authors": [
+    "Kurtis Shaner"
+  ],
+  "description": "Utility javascript that handles all modern usecases for dropdown menus",
+  "main": "dropdown.js",
+  "moduleType": [
+      "globals"
+  ],
+  "keywords": [
+    "dropdown",
+    "menu",
+    "mega-menu",
+    "hoverIntent"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
