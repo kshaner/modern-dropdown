@@ -1,5 +1,7 @@
 window.Dropdown = (function() {
 
+	'use strict';
+
 	var incrementer = 0;
 	var util = {
 		addClass:function(node, cl) {
