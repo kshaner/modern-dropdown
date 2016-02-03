@@ -81,7 +81,8 @@ window.Dropdown = (function() {
 		this.opts = {
 			delay: 250,
 			openClass: 'dropdown--open',
-			menu : '> ul'
+			menu : '> ul',
+			spa : false
 		};
 
 		for(var opt in opts) {
@@ -198,12 +199,17 @@ window.Dropdown = (function() {
 		if (window.PointerEvent) {
 			this.container.addEventListener('pointerenter', evts.pointerenter);
 			this.container.addEventListener('pointerleave', evts.pointerleave);
-			this.menu.addEventListener('click', evts.handleTouchClose);
+			if (this.opts.spa) {
+				this.menu.addEventListener('click', evts.handleTouchClose);
+			}
 		} else {
 			if (util.hasTouch) {
 				this.mainLink.addEventListener('click', function(e) {
 					evts.touch(e);
 				});
+				if (this.opts.spa) {
+					this.menu.addEventListener('click', evts.handleTouchClose);
+				}
 			}
 
 			if (this.container.addEventListener) {
