@@ -124,7 +124,7 @@ window.Dropdown = (function() {
 			}
 		};
 
-		evts.mouseenter = function(e) {
+		evts.mouseenter = function() {
 			if (typeof _this.timeout.leave === 'number') {
 				window.clearTimeout(_this.timeout.leave);
 			} else {
@@ -134,7 +134,7 @@ window.Dropdown = (function() {
 			}
 		};
 
-		evts.mouseleave = function(e) {
+		evts.mouseleave = function() {
 			if (typeof _this.timeout.enter === 'number') {
 				window.clearTimeout(_this.timeout.enter);
 			} else {
@@ -197,6 +197,35 @@ window.Dropdown = (function() {
 			_this.close();
 			document.removeEventListener('click', evts.maybeClose);
 		};
+
+		evts.focus = function() {
+			if (!_this.active) {
+				_this.open();
+			}
+		};
+
+		evts.blur = function() {
+			if (_this.menuLinks.length < 1) {
+				_this.close();
+				return;
+			}
+
+			// make this async so we can detect the correct document.activeElement
+			window.setTimeout(function() {
+				for(var i = 0; i<_this.menuLinks.length; i++) {
+					if (document.activeElement === _this.menuLinks[i]) {
+						return;
+					}
+				}
+				_this.close();
+			}, 0);
+		};
+
+		// use event capturing to detect event focus and blur because do not bubble
+		if (this.container.addEventListener) {
+			this.container.addEventListener('focus', evts.focus, true);
+			this.container.addEventListener('blur', evts.blur, true);
+		}
 
 		if (window.PointerEvent) {
 			this.container.addEventListener('pointerenter', evts.pointerenter);

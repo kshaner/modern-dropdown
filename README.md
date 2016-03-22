@@ -8,6 +8,7 @@ It handles:
 * Pointer Events
 * Mouse Events
 * Hover Intent
+* Focus Events
 
 If a menu has a top level link and is opened with touch, the menu is opened and the link is not followed.  Then if it is touched again while the menu is open, the link followed.  This behavior is similar to aria-haspopup.
 
@@ -46,3 +47,6 @@ jQuery('#node').dropdown(options);
 * Android 4+ (haven't tested with 2.3)
 * Edge
 * IE8+
+
+### Develop Notes
+Use uglifyjs to create minified version: uglifyjs dropdown.js -o dropdown.min.js --mangle --compress
