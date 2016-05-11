@@ -1,0 +1,17 @@
+{
+  "name": "modern-dropdown",
+  "version": "1.1.0",
+  "description": "Utility javascript that handles all modern usecases for dropdown menus",
+  "main": "dropdown.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kshaner/modern-dropdown.git"
+  },
+  "keywords": ["menu","dropdown","mega-menu","aria-haspopup"],
+  "author": "Kurtis Shaner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kshaner/modern-dropdown/issues"
+  },
+  "homepage": "https://github.com/kshaner/modern-dropdown#readme"
+}
